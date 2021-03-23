@@ -3,7 +3,7 @@ import AppReducer from './AppReducer'
 // import axios from 'axios';
 
 const initialState = {
-    employees: [
+    products: [
         {  name:'Loading Data...', stock: '+-+-+-+-+-+-+-+-' }
     ]
 }
@@ -14,7 +14,7 @@ export const GlobalContext = createContext(initialState);
 export const GlobalProvider = ({ children }) => {
     const [state, dispatch] = useReducer(AppReducer, initialState);
 
-    function removeEmployee(_id) {
+    function removeProduct(_id) {
         
         fetch(`http://localhost:8080/api/products/${_id}`, {
             
@@ -35,12 +35,12 @@ export const GlobalProvider = ({ children }) => {
         .then(data => {
             // let employees=data;
         // We got the data so lets add it to the state
-        dispatch({ type: 'REMOVE_EMPLOYEE', payload: _id })
+        dispatch({ type: 'REMOVE_PRODUCT', payload: _id })
         console.log(data);
         })
     };
 
-    function addEmployee(employees) {
+    function addProduct(products) {
         
         fetch('http://localhost:8080/api/products', {
             
@@ -53,7 +53,7 @@ export const GlobalProvider = ({ children }) => {
             
             mode: 'cors',
             
-            body:JSON.stringify(employees) ,
+            body:JSON.stringify(products) ,
 //         
         })
             
@@ -61,14 +61,14 @@ export const GlobalProvider = ({ children }) => {
         .then(data => {
             // let employees=data;
         // We got the data so lets add it to the state
-        dispatch({ type: 'ADD_EMPLOYEES', payload: employees })
+        dispatch({ type: 'ADD_PRODUCTS', payload: products })
         console.log(data);
         })
     };
 
-    function editEmployee(employees) {
+    function editProducts(products) {
         
-        fetch(`http://localhost:8080/api/products/${employees._id}`, {
+        fetch(`http://localhost:8080/api/products/${products._id}`, {
             
             method: 'PUT',
             
@@ -79,7 +79,7 @@ export const GlobalProvider = ({ children }) => {
             
             mode: 'cors',
             
-            body:JSON.stringify(employees) ,
+            body:JSON.stringify(products) ,
 //         
         })
             
@@ -87,21 +87,21 @@ export const GlobalProvider = ({ children }) => {
         .then(data => {
             // let employees=data;
         // We got the data so lets add it to the state
-        dispatch({ type: 'EDIT_EMPLOYEE', payload: employees })
+        dispatch({ type: 'EDIT_PRODUCT', payload: products})
         console.log(data);
         
         })
         
     };
     
-    function editRoute(employees) {
+    function editRoute(products) {
         dispatch({
             type: 'EDIT_EMPLOYEE',
-            payload: employees
+            payload: products
         });
     };
     
-    function getEmployees(){
+    function getProducts(){
         
 	  // Start fetching and fire up the loading state
 	  fetch('http://localhost:8080/api/products')
@@ -116,11 +116,11 @@ export const GlobalProvider = ({ children }) => {
 
 	
     return (<GlobalContext.Provider value={{
-        employees:state.employees,
-        getEmployees,
-        removeEmployee,
-        addEmployee,
-        editEmployee,
+        products:state.products,
+        getProducts,
+        removeProduct,
+        addProduct,
+        editProduct,
         editRoute
     }}>
         {children}

@@ -5,30 +5,30 @@ export default (state, action) => {
         //         ...state,
         //         employees: [...state.employees, action.payload]
         //     };
-        case 'REMOVE_EMPLOYEE':
+        case 'REMOVE_PRODUCT':
             return {
                 ...state,
-                employees: state.employees.filter(employee => employee._id !== action.payload)
+                products: state.products.filter(product=> product._id !== action.payload)
             };
-        case 'ADD_EMPLOYEES':
+        case 'ADD_PRODUCTS':
             return {
                 ...state,
-                employees: [...state.employees, action.payload]
+                products: [...state.products, action.payload]
             };
-        case 'EDIT_EMPLOYEE':
-            const updatedEmployee = action.payload;
+        case 'EDIT_PRODUCT':
+            const updatedProduct= action.payload;
 
-            const updatedEmployees = state.employees.map(employee => {
-                if (employee.name === updatedEmployee.name) {
-                    return updatedEmployee;
+            const updatedProducts= state.products.map(product => {
+                if (product.name === updatedProduct.name) {
+                    return updatedProduct;
                 }
-                return employee;
+                return product;
             });
 
 
             return {
                 ...state,
-                employees: updatedEmployees
+                products: updatedProducts
             };
        case "listing": 
             // let updatedstate = action.payload;
@@ -36,7 +36,7 @@ export default (state, action) => {
             // updatedstate,
 
             // ...state,
-            employees:action.payload
+            products:action.payload
         
         };
 

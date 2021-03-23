@@ -1,6 +1,6 @@
-2- Fix terminology in frontend & set it relative to backend i.e stocks, price & name of company : Stock Exchange listings/Directory
+1- Environment Variables to call apis instead of direct calls in each request on main branch
 
-11- Environment Variables to call apis instead of direct calls in each request
+2- Automated Testing i.e e2e & unit tests on main branch 
 
 Key-Points/Summary/Troubleshooting: 
 
