@@ -1,25 +1,6 @@
-1- Add these changes step-by-step to the repo on github
-
 2- Fix terminology in frontend & set it relative to backend i.e stocks, price & name of company : Stock Exchange listings/Directory
 
-3- Fix ID-based routing issue with data in react & mongodb * (Done)
-
-4- Data visualization using external apis & current local data
-
-5- Remove Data * (Done)
-
-6- Add Data * (Done)
-
-7- List Data * (Done)
-
-8- Edit / Update data * (Done)
-
-9- Drag n Drop for elements 
-
-10- Replace fetch with axios
-
 11- Environment Variables to call apis instead of direct calls in each request
-
 
 Key-Points/Summary/Troubleshooting: 
 
