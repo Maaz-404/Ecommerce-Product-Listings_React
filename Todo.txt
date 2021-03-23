@@ -1,0 +1,35 @@
+1- Add these changes step-by-step to the repo on github
+
+2- Fix terminology in frontend & set it relative to backend i.e stocks, price & name of company : Stock Exchange listings/Directory
+
+3- Fix ID-based routing issue with data in react & mongodb * (Done)
+
+4- Data visualization using external apis & current local data
+
+5- Remove Data * (Done)
+
+6- Add Data * (Done)
+
+7- List Data * (Done)
+
+8- Edit / Update data * (Done)
+
+9- Drag n Drop for elements 
+
+10- Replace fetch with axios
+
+11- Environment Variables to call apis instead of direct calls in each request
+
+
+Key-Points/Summary/Troubleshooting: 
+
+    $ Api data not showing up or showing up in console but not in UI 
+    
+        1- In order to change global state & present/re-render data, the initial state variable or data along with new data that will replace mock or initial data/state should both be exported from provider & imported in the component where they are meant to be displayed
+        
+    $ Rendered object from headless wordpress is not being defined/displayed , try to render before displaying it like so..
+        
+        1- In global state where data is being received , if all data is not to be rendered then separate both
+        2- In global state fetch function but while passing it as a payload
+        3- In reducer try to render it 
+        4- In presentation component while importing the fetch funcion or displaying it...
